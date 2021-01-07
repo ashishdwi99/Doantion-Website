@@ -1,0 +1,21 @@
+<%- include('partials/header'); -%>
+
+
+<%if (response.items.length!=0) {%>
+  
+  <ul class="items">
+    <%for(var i=0;i<response.items.length;i++){%>
+      <li class="item">
+        <h3> Item = <%=response.items[i].name%> </h4>
+        <p> <b>Description</b> = <%=response.items[i].description%></p>
+        <p><b>Required at Location</b> = <%=response.items[i].address%></p>
+        <p><b>Contact Number</b> = <%=response.items[i].contactNumber%></p>
+        <p><b>Date Posted</b> = <%=response.items[i].date.getDate()%>/<%=1+response.items[i].date.getMonth()%>/<%=response.items[i].date.getFullYear()%></p>
+      </li>
+
+    <%}%>
+  </ul>
+
+<%}%>
+
+<%- include('partials/footer'); -%>

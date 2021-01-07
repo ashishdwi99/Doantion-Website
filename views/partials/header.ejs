@@ -1,0 +1,23 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <nav>
+    <h1><a href="/">Donation Website</a></h1>
+    <ul>
+      <% if (user) { %>
+        <li>Welcome, <%= user.name %></li>
+        <li><a href="/requestitem">Request Item</a></li>
+        <li><a href="/myrequest?postedBy=<%= user.email %>" >My Requests</a></li>
+        <li><a href="/logout">Log out</a></li>
+      <% } else { %>
+        <li><a href="/login">Log in</a></li>
+        <li><a href="/signup" class="btn">Sign up</a></li>
+      <% } %>
+    </ul>
+  </nav>
+  
